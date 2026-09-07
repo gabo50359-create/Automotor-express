@@ -1,21 +1,29 @@
 <?php
-$servidorBD = "localhost";
-$usuarioBD = "root";
-$contraseñaBD = "";
-$nombreBD = "automotor_express";
+$servidorBD = getenv('MYSQLHOST') ?: 'localhost';
+$puertoBD = (int) (getenv('MYSQLPORT') ?: 3306);
+$usuarioBD = getenv('MYSQLUSER') ?: 'root';
+$contraseñaBD = getenv('MYSQLPASSWORD') ?: '';
+$nombreBD = getenv('MYSQLDATABASE') ?: 'automotor_express';
 
-$conexion = new mysqli($servidorBD, $usuarioBD, $contraseñaBD);
+if (getenv('MYSQLHOST')) {
+    $conexion = new mysqli($servidorBD, $usuarioBD, $contraseñaBD, $nombreBD, $puertoBD);
+} else {
+    $conexion = new mysqli($servidorBD, $usuarioBD, $contraseñaBD, '', $puertoBD);
+}
 
 if ($conexion->connect_error) {
     die("Error de conexión: " . $conexion->connect_error);
 }
 
-$nombreBDSeguro = $conexion->real_escape_string($nombreBD);
-if (!$conexion->query("CREATE DATABASE IF NOT EXISTS `$nombreBDSeguro` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci")) {
-    die("Error al crear la base de datos: " . $conexion->error);
+if (!getenv('MYSQLHOST')) {
+    $nombreBDSeguro = $conexion->real_escape_string($nombreBD);
+    if (!$conexion->query("CREATE DATABASE IF NOT EXISTS `$nombreBDSeguro` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci")) {
+        die("Error al crear la base de datos: " . $conexion->error);
+    }
+
+    $conexion->select_db($nombreBD);
 }
 
-$conexion->select_db($nombreBD);
 $conexion->set_charset("utf8");
 
 $conexion->query("CREATE TABLE IF NOT EXISTS categorias (

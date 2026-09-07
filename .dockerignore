@@ -1,0 +1,8 @@
+.git
+.github
+.vscode
+.env
+.env.*
+!.env.example
+*.log
+Thumbs.db
