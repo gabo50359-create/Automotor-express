@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+    --fondo-base: #1a1a1a;
+    --color-primario: #1e3a8a;
+    --color-secundario: #e5e7eb;
+    --color-acento: #3b82f6;
+    --color-fondo-suave: #0f172a;
+    --color-blanco: #ffffff;
+    --color-texto: #e5e7eb;
+    --color-sombra: rgba(0, 0, 0, 0.18);
+    --color-borde: rgba(255, 255, 255, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--fondo-base);
+    color: var(--color-texto);
+    font-family: 'Roboto Mono', monospace;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Mono', monospace;
+    color: var(--color-secundario);
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+}
+
+p {
+    color: var(--color-texto);
+    margin-bottom: 0.75rem;
+}
+
+a {
+    color: var(--color-secundario);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+button,
+input,
+textarea,
+select {
+    font-family: 'Roboto Mono', monospace;
+}
+
+.boton-general {
+    display: inline-block;
+    padding: 0.9rem 1.4rem;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--color-acento), var(--color-primario));
+    color: var(--color-secundario);
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.boton-general:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(59, 130, 246, 0.25);
+}

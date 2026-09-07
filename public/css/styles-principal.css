@@ -1,0 +1,1059 @@
+:root {
+    --fondo: #1a1a1a;
+    --primario: #1e3a8a;
+    --secundario: #e5e7eb;
+    --acento: #3b82f6;
+    --tarjeta: rgba(17, 24, 39, 0.72);
+    --sombra: rgba(0, 0, 0, 0.25);
+    --linea: rgba(229, 231, 235, 0.14);
+    --fondo-tarjeta: rgba(17, 17, 17, 0.8);
+    --fondo-tarjeta-suave: rgba(255, 255, 255, 0.03);
+    --texto-suave: rgba(229, 231, 235, 0.8);
+    --boton-primario: #3b82f6;
+    --boton-primario-hover: #60a5fa;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Roboto Mono", monospace;
+    background: var(--fondo);
+    color: var(--secundario);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+/* Enlaces */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Fondo con efecto parallax */
+.fondo-parallax {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background:
+        radial-gradient(circle at top left, rgba(59, 130, 246, 0.18), transparent 30%),
+        radial-gradient(circle at top right, rgba(30, 58, 138, 0.2), transparent 25%),
+        linear-gradient(135deg, rgba(12, 12, 12, 0.9), rgba(26, 26, 26, 0.98));
+    background-size: cover;
+    transform: translate3d(0, 0, 0);
+}
+
+.contenedor {
+    width: min(1200px, calc(100% - 2rem));
+    margin: 0 auto;
+}
+
+.encabezado {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50;
+    background: rgba(17, 17, 17, 0.72);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--linea);
+}
+
+.navegacion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 78px;
+    gap: 1rem;
+}
+
+.logotipo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--secundario);
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.imagen-logo {
+    width: 13rem;
+    height: 5rem;
+    object-fit: contain;
+}
+
+.marca-logotipo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.85rem 1rem 0.85rem 1.15rem;
+    background: linear-gradient(135deg, var(--acento), var(--primario));
+    border: 2px solid rgba(229, 231, 235, 0.35);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05);
+    transform: rotate(-8deg);
+    font-size: 1.2rem;
+}
+
+.nombre-logotipo {
+    font-size: clamp(1rem, 1.8vw, 1.4rem);
+}
+
+.menu-navegacion {
+    display: flex;
+    align-items: center;
+    gap: 1.3rem;
+    flex-wrap: wrap;
+}
+
+.menu-navegacion a {
+    position: relative;
+    font-family: "Space Mono", monospace;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--secundario);
+}
+
+.menu-navegacion a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.35rem;
+    width: 100%;
+    height: 2px;
+    background: var(--acento);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+}
+
+.menu-navegacion a:hover::after,
+.menu-navegacion a:focus-visible::after {
+    transform: scaleX(1);
+}
+
+.nav-usuario {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    padding: 0.4rem 0.75rem;
+    border: 1px solid rgba(59, 130, 246, 0.45);
+    border-radius: 999px;
+    background: rgba(59, 130, 246, 0.08);
+}
+
+.nav-usuario-texto {
+    font-family: "Space Mono", monospace;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--secundario);
+}
+
+.nav-usuario a {
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    color: var(--acento);
+}
+
+.portada {
+    padding-top: 110px;
+    padding-bottom: 1.5rem;
+}
+
+.pagina-secundaria {
+    padding-top: 110px;
+}
+
+.contenedor-carrusel {
+    width: 100%;
+    padding: 0;
+}
+
+.carrusel {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    background: #000;
+    border-bottom: 1px solid var(--linea);
+}
+
+.diapositiva {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.diapositiva.activa {
+    opacity: 1;
+}
+
+.diapositiva img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(0.1) contrast(1.05) brightness(0.75);
+}
+
+.diapositiva::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(10, 10, 10, 0.68), rgba(10, 10, 10, 0.18));
+}
+
+.bienvenida,
+.caracteristicas-principales,
+.estadisticas,
+.servicios,
+.repuestos,
+.eleccion,
+.testimonios,
+.contacto-rapido,
+.blog,
+.lista-servicios,
+.proceso-servicio,
+.bloque-mision-vision,
+.valores,
+.historia,
+.equipo,
+.certificaciones,
+.estadisticas-nosotros,
+.seccion-contacto-principal,
+.horarios,
+.seccion-acceso {
+    padding: 2.5rem 0;
+}
+
+.encabezado-pagina {
+    padding: 2.5rem 0 1.5rem;
+}
+
+.seccion-seleccion-catalogo {
+    padding: 1rem 0 4rem;
+}
+
+.opciones-catalogo {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.opcion-catalogo {
+    display: grid;
+    grid-template-columns: minmax(150px, 0.85fr) 1fr;
+    min-height: 250px;
+    overflow: hidden;
+    background: var(--fondo-tarjeta);
+    border: 1px solid var(--linea);
+    border-radius: 18px 14px 22px 16px;
+    box-shadow: 0 18px 36px var(--sombra);
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.opcion-catalogo:hover,
+.opcion-catalogo:focus-visible {
+    transform: translateY(-5px);
+    border-color: var(--acento);
+}
+
+.opcion-catalogo img {
+    width: 100%;
+    height: 100%;
+    min-height: 250px;
+    object-fit: cover;
+    filter: brightness(0.72) contrast(1.08);
+}
+
+.opcion-catalogo div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.opcion-catalogo h2 {
+    margin: 0 0 0.75rem;
+    font-family: "Space Mono", monospace;
+    font-size: clamp(1.2rem, 2vw, 1.8rem);
+    color: var(--secundario);
+}
+
+.opcion-catalogo span {
+    color: var(--texto-suave);
+}
+
+@media (max-width: 760px) {
+    .opciones-catalogo {
+        grid-template-columns: 1fr;
+    }
+}
+
+.tarjeta-bienvenida,
+.tarjeta-caracteristica,
+.tarjeta-servicio,
+.tarjeta-repuesto,
+.tarjeta-eleccion,
+.tarjeta-testimonio,
+.tarjeta-blog,
+.tarjeta-contacto,
+.tarjeta-servicio-detallado,
+.tarjeta-mision-vision,
+.tarjeta-valor,
+.tarjeta-proceso,
+.tarjeta-equipo,
+.panel-acceso,
+.bloque-informacion-contacto,
+.bloque-formulario-contacto {
+    background: var(--fondo-tarjeta);
+    border: 1px solid var(--linea);
+    border-radius: 18px 14px 22px 16px;
+    box-shadow: 0 18px 36px var(--sombra);
+}
+
+.tarjeta-bienvenida {
+    padding: clamp(1.5rem, 4vw, 3rem);
+    transform: rotate(-0.4deg);
+}
+
+.etiqueta-seccion {
+    margin: 0 0 0.8rem;
+    color: var(--acento);
+    font-family: "Space Mono", monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.titulo-principal {
+    margin: 0;
+    font-family: "Space Mono", monospace;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--secundario);
+}
+
+.texto-principal {
+    width: 100%;
+    max-width: none;
+    margin-top: 1rem;
+    color: rgba(229, 231, 235, 0.82);
+    font-size: 1.05rem;
+}
+
+.texto-principal p {
+    margin: 0 0 1rem;
+}
+
+.texto-principal p:last-child {
+    margin-bottom: 0;
+}
+
+.eslogan-bienvenida {
+    color: var(--secundario);
+    font-weight: 700;
+}
+
+.encabezado-seccion {
+    margin-bottom: 1.5rem;
+}
+
+.encabezado-seccion h2,
+.texto-historia h2 {
+    margin: 0;
+    font-family: "Space Mono", monospace;
+    font-size: clamp(1.7rem, 3vw, 2.6rem);
+    color: var(--secundario);
+}
+
+.grupo-caracteristicas,
+.grupo-servicios,
+.grupo-repuestos,
+.grupo-eleccion,
+.grupo-testimonios,
+.grupo-blog,
+.grupo-valores,
+.grupo-equipo,
+.grupo-estadisticas,
+.grupo-estadisticas-nosotros,
+.grupo-proceso,
+.grupo-servicios-completos {
+    display: grid;
+    gap: 1.2rem;
+}
+
+.grupo-caracteristicas {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.tarjeta-caracteristica,
+.tarjeta-servicio,
+.tarjeta-repuesto,
+.tarjeta-eleccion,
+.tarjeta-testimonio,
+.tarjeta-blog,
+.tarjeta-servicio-detallado,
+.tarjeta-mision-vision,
+.tarjeta-valor,
+.tarjeta-proceso,
+.tarjeta-equipo,
+.panel-acceso {
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.tarjeta-caracteristica {
+    display: flex;
+    min-height: 220px;
+    padding: 1.5rem;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.tarjeta-caracteristica:hover,
+.tarjeta-servicio:hover,
+.tarjeta-repuesto:hover,
+.tarjeta-eleccion:hover,
+.tarjeta-testimonio:hover,
+.tarjeta-blog:hover,
+.tarjeta-servicio-detallado:hover,
+.tarjeta-mision-vision:hover,
+.tarjeta-valor:hover,
+.tarjeta-proceso:hover,
+.tarjeta-equipo:hover {
+    transform: translateY(-4px);
+    border-color: rgba(59, 130, 246, 0.55);
+}
+
+.icono-caracteristica,
+.icono-servicio {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.8rem;
+    height: 2.8rem;
+    margin-bottom: 0.85rem;
+    border-radius: 0.8rem;
+    background: rgba(59, 130, 246, 0.12);
+    border: 1px solid rgba(59, 130, 246, 0.35);
+    color: var(--acento);
+    font-size: 1.2rem;
+}
+
+.tarjeta-caracteristica h2,
+.tarjeta-servicio h3,
+.tarjeta-repuesto h3,
+.tarjeta-eleccion h3,
+.tarjeta-blog h3,
+.tarjeta-mision-vision h2,
+.tarjeta-valor h3,
+.tarjeta-proceso h3,
+.tarjeta-equipo h3 {
+    margin: 0 0 0.7rem;
+    font-family: "Space Mono", monospace;
+    font-size: 1.1rem;
+    color: var(--secundario);
+}
+
+.tarjeta-caracteristica p,
+.tarjeta-servicio p,
+.tarjeta-repuesto p,
+.tarjeta-eleccion p,
+.tarjeta-testimonio p,
+.tarjeta-blog p,
+.tarjeta-mision-vision p,
+.tarjeta-valor p,
+.tarjeta-proceso p,
+.tarjeta-equipo p,
+.texto-historia p,
+.lista-contacto,
+.lista-certificaciones,
+.campo-formulario label,
+.campo-formulario input,
+.campo-formulario select,
+.campo-formulario textarea,
+.item-contacto p,
+.formulario-acceso,
+.formulario-contacto,
+.enlace-formulario {
+    color: var(--texto-suave);
+}
+
+.tarjeta-caracteristica span {
+    display: block;
+    margin-top: 0.8rem;
+    color: var(--acento);
+    font-size: 0.9rem;
+}
+
+.tarjeta-caracteristica span {
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid var(--linea);
+}
+
+.grupo-estadisticas,
+.grupo-estadisticas-nosotros {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.estadistica-item {
+    padding: 1.5rem 1rem;
+    text-align: center;
+    background: rgba(17, 17, 17, 0.7);
+    border: 1px solid var(--linea);
+    border-radius: 18px;
+}
+
+.estadistica-item strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-family: "Space Mono", monospace;
+    font-size: clamp(1.4rem, 2vw, 2rem);
+    color: var(--acento);
+}
+
+.estadistica-item span {
+    color: rgba(229, 231, 235, 0.85);
+    font-size: 0.88rem;
+}
+
+.grupo-servicios {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.tarjeta-servicio {
+    padding: 1.5rem;
+}
+
+.grupo-repuestos {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.tarjeta-repuesto {
+    overflow: hidden;
+}
+
+.imagen-repuesto {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.imagen-repuesto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(0.08) contrast(1.1) brightness(0.8);
+}
+
+.tarjeta-repuesto h3,
+.tarjeta-repuesto p {
+    padding: 0 1rem;
+}
+
+.tarjeta-repuesto h3 {
+    padding-top: 1rem;
+}
+
+.tarjeta-repuesto p {
+    padding-bottom: 1.1rem;
+    color: var(--acento);
+    font-weight: 700;
+}
+
+.grupo-eleccion {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.tarjeta-eleccion {
+    padding: 1.5rem;
+}
+
+.grupo-testimonios {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.tarjeta-testimonio {
+    padding: 1.5rem;
+}
+
+.tarjeta-testimonio strong {
+    display: block;
+    margin-top: 0.9rem;
+    color: var(--acento);
+    font-family: "Space Mono", monospace;
+}
+
+.tarjeta-contacto {
+    padding: 2rem;
+}
+
+.izquierda {
+    margin-bottom: 1.2rem;
+}
+
+.grupo-contacto {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.item-contacto {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--linea);
+    border-radius: 14px;
+}
+
+.item-contacto span {
+    font-size: 1.2rem;
+}
+
+.grupo-blog {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.tarjeta-blog {
+    padding: 1.5rem;
+}
+
+.grupo-servicios-completos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.tarjeta-servicio-detallado {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    overflow: hidden;
+}
+
+.tarjeta-servicio-detallado img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    min-height: 220px;
+}
+
+.contenido-servicio {
+    padding: 1.5rem;
+}
+
+.contenido-servicio h2 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-family: "Space Mono", monospace;
+    font-size: 1.3rem;
+    color: var(--secundario);
+}
+
+.precio-servicio {
+    margin: 1rem 0;
+    color: var(--acento);
+    font-weight: 700;
+}
+
+.boton-principal,
+.boton-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--boton-primario), var(--primario));
+    color: var(--secundario);
+    padding: 0.9rem 1.4rem;
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 10px 18px rgba(59, 130, 246, 0.2);
+}
+
+.boton-principal:hover,
+.boton-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 22px rgba(59, 130, 246, 0.3);
+}
+
+.boton-cta {
+    margin-top: 1rem;
+}
+
+.contenedor-boton-cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.grupo-proceso {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.tarjeta-proceso {
+    padding: 1.5rem;
+}
+
+.numero-proceso {
+    display: inline-block;
+    margin-bottom: 0.8rem;
+    color: var(--acento);
+    font-family: "Space Mono", monospace;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.titulo-pagina {
+    max-width: 760px;
+}
+
+.texto-pagina {
+    max-width: 760px;
+    margin-bottom: 0;
+}
+
+.dos-columnas {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.tarjeta-mision-vision {
+    padding: 1.5rem;
+}
+
+.grupo-valores {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.2rem;
+}
+
+.tarjeta-valor {
+    padding: 1.5rem;
+}
+
+.historia-contenido {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 1.6rem;
+    align-items: center;
+}
+
+.imagen-historia {
+    overflow: hidden;
+    border-radius: 18px;
+    border: 1px solid var(--linea);
+}
+
+.imagen-historia img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+}
+
+.texto-historia {
+    padding: 1rem 0;
+}
+
+.grupo-equipo {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.tarjeta-equipo {
+    padding: 1rem;
+    text-align: center;
+}
+
+.tarjeta-equipo img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 14px;
+    margin-bottom: 1rem;
+}
+
+.tarjeta-equipo span {
+    display: block;
+    margin-top: 0.5rem;
+    color: var(--acento);
+    font-size: 0.8rem;
+}
+
+.lista-certificaciones {
+    margin: 0;
+    padding-left: 1.2rem;
+    list-style: disc;
+    line-height: 2;
+}
+
+.grupo-estadisticas-nosotros {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.formulario-contacto-contenedor {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 1.5rem;
+}
+
+.bloque-informacion-contacto,
+.bloque-formulario-contacto,
+.panel-acceso {
+    padding: 1.5rem;
+}
+
+.lista-contacto {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 1.5rem;
+    display: grid;
+    gap: 0.7rem;
+}
+
+.mapa-contacto {
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid var(--linea);
+    height: 260px;
+}
+
+.mapa-contacto iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.formulario-contacto,
+.formulario-acceso {
+    display: grid;
+    gap: 1rem;
+}
+
+.campo-formulario {
+    display: grid;
+    gap: 0.45rem;
+}
+
+.campo-formulario label {
+    font-weight: 700;
+}
+
+.campo-formulario input,
+.campo-formulario select,
+.campo-formulario textarea {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border-radius: 12px;
+    border: 1px solid var(--linea);
+    background: rgba(255, 255, 255, 0.02);
+    color: var(--secundario);
+}
+
+.campo-formulario textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.boton-formulario {
+    width: fit-content;
+    margin-top: 0.5rem;
+}
+
+.tabla-horarios {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.fila-horario {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.2rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--linea);
+    border-radius: 14px;
+}
+
+.contenedor-acceso {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.enlace-formulario {
+    margin: 0;
+    text-align: center;
+}
+
+.enlace-formulario a {
+    color: var(--acento);
+}
+
+.pie-pagina {
+    border-top: 1px solid var(--linea);
+    background: rgba(17, 17, 17, 0.9);
+}
+
+.pie-contenido {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.5rem 0;
+    font-family: "Space Mono", monospace;
+    font-size: 0.85rem;
+    color: rgba(229, 231, 235, 0.8);
+}
+
+.nombre-empresa {
+    margin: 0 0 0.6rem;
+    font-weight: 700;
+    color: var(--secundario);
+}
+
+.pie-contenido p {
+    margin: 0.2rem 0;
+}
+
+.redes-sociales {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-weight: 700;
+}
+
+.redes-sociales a {
+    color: var(--acento);
+}
+
+@media (max-width: 1024px) {
+    .grupo-caracteristicas,
+    .grupo-estadisticas,
+    .grupo-estadisticas-nosotros,
+    .grupo-repuestos,
+    .grupo-eleccion,
+    .grupo-servicios,
+    .grupo-servicios-completos,
+    .grupo-proceso,
+    .grupo-blog,
+    .grupo-valores,
+    .grupo-equipo {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .formulario-contacto-contenedor,
+    .contenedor-acceso,
+    .historia-contenido,
+    .dos-columnas {
+        grid-template-columns: 1fr;
+    }
+
+    .grupo-testimonios {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .navegacion {
+        flex-direction: column;
+        justify-content: center;
+        min-height: 96px;
+        padding: 0.8rem 0;
+    }
+
+    .menu-navegacion {
+        justify-content: center;
+        gap: 0.8rem 1rem;
+    }
+
+    .carrusel {
+        height: 420px;
+    }
+
+    .grupo-servicios,
+    .grupo-caracteristicas,
+    .grupo-estadisticas,
+    .grupo-estadisticas-nosotros,
+    .grupo-repuestos,
+    .grupo-eleccion,
+    .grupo-blog,
+    .grupo-valores,
+    .grupo-equipo,
+    .grupo-proceso,
+    .grupo-servicios-completos,
+    .grupo-contacto,
+    .contenedor-acceso {
+        grid-template-columns: 1fr;
+    }
+
+    .tarjeta-servicio-detallado {
+        grid-template-columns: 1fr;
+    }
+
+    .pie-contenido {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .redes-sociales {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .portada,
+    .pagina-secundaria {
+        padding-top: 120px;
+    }
+
+    .carrusel {
+        height: 340px;
+    }
+
+    .menu-navegacion a {
+        letter-spacing: 0.08em;
+        font-size: 0.7rem;
+    }
+
+    .fila-horario {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

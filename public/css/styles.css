@@ -1,0 +1,1045 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --color-fondo: #1a1a1a;
+  --color-fondo-oscuro: #0d0d0d;
+  --color-panel: #232323;
+  --color-panel-2: #2b2b2b;
+  --color-texto: #f5f5f5;
+  --color-texto-suave: #d7d7d7;
+  --color-acento: #3b82f6;
+  --color-acento-2: #60a5fa;
+  --color-borde: rgba(255, 255, 255, 0.12);
+  --shadow-strong: 0 20px 35px rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background:
+    linear-gradient(rgba(255,255,255,0.02), rgba(255,255,255,0.02)),
+    repeating-linear-gradient(0deg, rgba(255,255,255,0.025), rgba(255,255,255,0.025) 1px, transparent 1px, transparent 5px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.018), rgba(255,255,255,0.018) 1px, transparent 1px, transparent 7px),
+    var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.6;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(96, 165, 250, 0.14), transparent 28%), radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.15), transparent 30%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+img {
+  display: block;
+  width: 100%;
+
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.contenedor {
+  width: min(1100px, 90%);
+  margin-inline: auto;
+}
+
+.encabezado-sitio,
+.encabezado {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  top: 0;
+  z-index: 30;
+  background: rgba(17, 17, 17, 0.72);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-borde);
+  box-shadow: none;
+}
+
+.envoltura-navegacion,
+.navegacion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 78px;
+  gap: 1rem;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.imagen-logo {
+  width: 13rem;
+  height: 5rem;
+  object-fit: contain;
+}
+
+.nombre-marca,
+.subtitulo-marca {
+  display: block;
+  line-height: 0.9;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.nombre-marca {
+  font-size: 2.1rem;
+  color: var(--color-texto);
+}
+
+.subtitulo-marca {
+  font-size: 1.3rem;
+  color: var(--color-acento-2);
+}
+
+.menu-navegacion {
+  display: flex;
+  align-items: center;
+  gap: 1.3rem;
+  flex-wrap: wrap;
+}
+
+.catalogo-dropdown {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.menu-navegacion a {
+  position: relative;
+  padding: 0;
+  color: var(--color-texto);
+  font-family: monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.menu-navegacion a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.35rem;
+  width: 100%;
+  height: 2px;
+  background: var(--color-acento);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.menu-navegacion a:hover::after,
+.menu-navegacion a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.catalogo-dropdown__toggle:hover,
+.catalogo-dropdown__menu a:hover,
+.menu-navegacion a:hover,
+.menu-navegacion a.activo,
+.catalogo-dropdown__menu a.activo,
+.catalogo-dropdown__toggle.activo {
+  color: var(--color-acento-2);
+  border-color: rgba(59, 130, 246, 0.8);
+  background: rgba(59, 130, 246, 0.06);
+}
+
+.catalogo-dropdown__menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  display: none;
+  min-width: 190px;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px;
+  background: rgba(13, 13, 13, 0.98);
+  border: 1px solid rgba(59, 130, 246, 0.7);
+  box-shadow: var(--shadow-strong);
+  z-index: 20;
+}
+
+.catalogo-dropdown:hover .catalogo-dropdown__menu,
+.catalogo-dropdown:focus-within .catalogo-dropdown__menu {
+  display: flex;
+}
+
+.alternador-menu {
+  display: none;
+  width: 46px;
+  height: 38px;
+  border: 1px solid var(--color-borde);
+  background: transparent;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.alternador-menu span {
+  display: block;
+  height: 2px;
+  background: var(--color-texto);
+  margin: 5px 0;
+}
+
+.seccion-principal {
+  position: relative;
+  min-height: 660px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: rgba(0,0,0,0.14);
+}
+
+.seccion-principal::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(11,11,11,0.8), rgba(11,11,11,0.3));
+  z-index: 1;
+}
+
+.diapositivas-carrusel {
+  position: absolute;
+  inset: 0;
+}
+
+.diapositiva-carrusel {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+
+}
+
+.diapositiva-carrusel.activo {
+  opacity: 1;
+
+}
+
+.capa-principal {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(10,10,10,0.82), rgba(10,10,10,0.22));
+  pointer-events: none;
+  z-index: 2;
+}
+
+.contenido-principal {
+  position: relative;
+  z-index: 3;
+  width: min(1100px, 90%);
+  margin: 0 auto;
+  padding: 92px 0 86px;
+}
+
+.sobretitulo {
+  margin: 0 0 18px;
+  color: var(--color-acento-2);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.seccion-principal h1,
+.encabezado-seccion h2,
+.caja-llamada h2,
+.encabezado-pagina h1,
+.formulario-login h1 {
+  margin: 0 0 18px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  line-height: 0.92;
+}
+
+.seccion-principal h1 {
+  font-size: clamp(3.2rem, 7vw, 7rem);
+  max-width: 620px;
+}
+
+.seccion-principal p,
+.encabezado-seccion p,
+.tarjeta p,
+.caja-llamada p,
+.pie-pagina p,
+.pie-pagina li,
+.pie-pagina a,
+.lista-caracteristicas li,
+.lista-contacto li,
+.formulario-login p {
+  color: var(--color-texto-suave);
+}
+
+.seccion-principal p {
+  max-width: 660px;
+  font-size: 1.06rem;
+}
+
+.acciones-principales {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 14px 22px;
+  border: 2px solid transparent;
+  background: var(--color-acento);
+  color: var(--color-texto);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  box-shadow: 0 8px 18px rgba(59, 130, 246, 0.25);
+}
+
+.boton:hover {
+
+  box-shadow: 0 14px 26px rgba(96, 165, 250, 0.2);
+  background: var(--color-acento-2);
+  color: #111;
+}
+
+.boton-secundario {
+  background: transparent;
+  border-color: rgba(255,255,255,0.28);
+  color: var(--color-texto);
+  box-shadow: none;
+}
+
+.boton-secundario:hover {
+  background: rgba(255,255,255,0.05);
+  color: var(--color-acento-2);
+}
+
+.section {
+  padding: 72px 0;
+}
+
+.diferencial-seccion {
+  position: relative;
+  background: #f3f3f0;
+  color: #141414;
+  padding-top: 48px;
+  padding-bottom: 72px;
+}
+
+.cinta-diferencial {
+  position: relative;
+  height: 15px;
+  width: 100%;
+  background:
+    repeating-linear-gradient(
+      135deg,
+      #1a1a1a 0,
+      #1a1a1a 18px,
+      #3b82f6 18px,
+      #3b82f6 36px
+    );
+  margin-bottom: 26px;
+}
+
+.encabezado-diferencial {
+  display: grid;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.distintivo-diferencial {
+  display: inline-flex;
+  align-self: start;
+  background: #1a1a1a;
+  color: #f5f5f5;
+  letter-spacing: 0.18em;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 9px 12px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.envoltura-titulo-diferencial {
+  display: grid;
+  grid-template-columns: 1.7fr 0.9fr;
+  gap: 22px;
+  align-items: end;
+}
+
+.titulo-diferencial {
+  margin: 0;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.7rem, 5vw, 5rem);
+  line-height: 0.9;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #111;
+}
+
+.titulo-diferencial span {
+  display: inline-block;
+  background: #1a1a1a;
+  color: var(--color-acento);
+  padding: 0 8px 2px;
+  box-shadow: 8px 0 0 #1a1a1a, -8px 0 0 #1a1a1a;
+}
+
+.lema-diferencial {
+  position: relative;
+  padding-left: 18px;
+  border-left: 3px solid var(--color-acento);
+  color: #282828;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.cuadricula-diferencial {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.tarjeta-diferencial {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 240px;
+  background: #f6f6f4;
+  border: 2px solid #1a1a1a;
+  padding: 22px 18px 16px;
+
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.04);
+}
+
+.tarjeta-diferencial:hover {
+
+  border-color: var(--color-acento);
+  box-shadow: 0 14px 22px rgba(0, 0, 0, 0.08);
+}
+
+.tarjeta-diferencial h3 {
+  margin: 0 0 12px;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #171717;
+}
+
+.tarjeta-diferencial p {
+  margin: 0;
+  color: #3a3a3a;
+  line-height: 1.6;
+}
+
+.flecha-diferencial {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 42px;
+  height: 42px;
+  background: #1a1a1a;
+  color: var(--color-acento);
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1;
+
+}
+
+.tarjeta-diferencial:hover .flecha-diferencial {
+  background: var(--color-acento);
+  color: #fff;
+}
+
+.encabezado-seccion h2 {
+  font-size: clamp(2.5rem, 4vw, 4rem);
+}
+
+.cuadricula-tarjetas {
+  display: grid;
+  gap: 24px;
+}
+
+.tres-columnas {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.cuatro-columnas {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.tarjeta {
+  position: relative;
+  background: linear-gradient(180deg, rgba(35,35,35,0.96), rgba(18,18,18,0.96));
+  border: 2px solid rgba(255,255,255,0.08);
+  padding: 22px 22px 18px;
+  box-shadow: var(--shadow-strong);
+  overflow: hidden;
+}
+
+.tarjeta::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 6px;
+  background: linear-gradient(180deg, var(--color-acento), var(--color-acento-2));
+}
+
+.tarjeta::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  right: 12px;
+  top: 12px;
+  background: radial-gradient(circle, rgba(255,255,255,0.12) 0 38%, transparent 39% 100%);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.tarjeta:hover,
+.tarjeta:focus-within {
+  border-color: rgba(59,130,246,0.7);
+  box-shadow: 0 18px 30px rgba(0,0,0,0.42);
+}
+
+.tarjeta-servicio {
+  display: grid;
+  gap: 14px;
+}
+
+.tarjeta-servicio img,
+.tarjeta-producto img,
+.tarjeta-equipo img,
+.category-card img,
+.tarjeta-nosotros img {
+  height: 220px;
+  object-fit: cover;
+  border: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 10px;
+}
+
+.tarjeta-servicio i,
+.lista-caracteristicas i,
+.lista-contacto i {
+  color: var(--color-acento-2);
+}
+
+.tarjeta-servicio h3,
+.tarjeta-producto h3,
+.tarjeta-destacada h3,
+.tarjeta-equipo h3,
+.category-card h3,
+.tarjeta-nosotros h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.precio-producto {
+  margin-top: 10px;
+  color: var(--color-acento-2);
+  font-size: 1.9rem;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.04em;
+}
+
+.encabezado-pagina {
+  background: linear-gradient(180deg, rgba(19,19,19,0.8), rgba(14,14,14,0.9));
+  border-bottom: 2px solid rgba(59, 130, 246, 0.7);
+  padding: 48px 0;
+}
+
+.encabezado-pagina h1 {
+  font-size: clamp(2.5rem, 5vw, 5rem);
+}
+
+.distribucion-dividida {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.lista-caracteristicas {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0;
+  display: grid;
+  gap: 12px;
+}
+
+.lista-caracteristicas li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.tarjeta-destacada {
+  background: linear-gradient(180deg, rgba(30,30,30,0.96), rgba(20,20,20,0.96));
+  border: 2px solid rgba(255,183,0,0.42);
+}
+
+.caja-llamada {
+  background: linear-gradient(180deg, rgba(232,93,4,0.12), rgba(255,183,0,0.05));
+  border: 2px solid rgba(232,93,4,0.5);
+  padding: 34px 28px;
+  text-align: center;
+}
+
+.caja-llamada h2 {
+  font-size: clamp(2.5rem, 4vw, 4rem);
+}
+
+.barra-catalogo,
+.enlaces-login {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.filtro-catalogo {
+  position: relative;
+}
+
+.filtro-catalogo input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.etiquetas-filtro {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 18px 0 24px;
+}
+
+.etiqueta-filtro {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 10px 18px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: transparent;
+  color: var(--color-texto);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+
+}
+
+.etiqueta-filtro:hover {
+  border-color: rgba(255,183,0,0.7);
+  color: var(--color-acento-2);
+}
+
+#filtro-todos:checked ~ .etiquetas-filtro label[for="filtro-todos"],
+#filtro-motor:checked ~ .etiquetas-filtro label[for="filtro-motor"],
+#filtro-frenos:checked ~ .etiquetas-filtro label[for="filtro-frenos"],
+#filtro-suspension:checked ~ .etiquetas-filtro label[for="filtro-suspension"],
+#filtro-electrico:checked ~ .etiquetas-filtro label[for="filtro-electrico"],
+#filtro-llantas:checked ~ .etiquetas-filtro label[for="filtro-llantas"],
+#filtro-aceites:checked ~ .etiquetas-filtro label[for="filtro-aceites"],
+#filtro-carroceria:checked ~ .etiquetas-filtro label[for="filtro-carroceria"] {
+  background: var(--color-acento);
+  border-color: var(--color-acento);
+  color: #111;
+  box-shadow: 0 10px 18px rgba(59, 130, 246, 0.2);
+}
+
+.cuadricula-productos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.tarjeta-producto,
+.producto {
+  display: block;
+}
+
+.cuadricula-productos .producto {
+  display: flex;
+  min-height: 500px;
+  flex-direction: column;
+}
+
+.cuadricula-productos .producto > img {
+  width: 100%;
+  height: 220px;
+  flex: 0 0 220px;
+  object-fit: cover;
+  object-position: center;
+  margin-bottom: 16px;
+}
+
+.cuadricula-productos .cuerpo-tarjeta {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.cuadricula-productos .cuerpo-tarjeta .boton {
+  margin-top: auto;
+}
+
+.filtro-catalogo input#filtro-motor:checked ~ .cuadricula-productos .tarjeta-producto,
+.filtro-catalogo input#filtro-frenos:checked ~ .cuadricula-productos .tarjeta-producto,
+.filtro-catalogo input#filtro-suspension:checked ~ .cuadricula-productos .tarjeta-producto,
+.filtro-catalogo input#filtro-electrico:checked ~ .cuadricula-productos .tarjeta-producto,
+.filtro-catalogo input#filtro-filtros:checked ~ .cuadricula-productos .tarjeta-producto,
+.filtro-catalogo input#filtro-llantas:checked ~ .cuadricula-productos .tarjeta-producto,
+.filtro-catalogo input#filtro-aceites:checked ~ .cuadricula-productos .tarjeta-producto,
+.filtro-catalogo input#filtro-carroceria:checked ~ .cuadricula-productos .tarjeta-producto,
+#filtro-motor:checked ~ .cuadricula-productos .producto,
+#filtro-frenos:checked ~ .cuadricula-productos .producto,
+#filtro-suspension:checked ~ .cuadricula-productos .producto,
+#filtro-electrico:checked ~ .cuadricula-productos .producto,
+#filtro-filtros:checked ~ .cuadricula-productos .producto,
+#filtro-llantas:checked ~ .cuadricula-productos .producto,
+#filtro-aceites:checked ~ .cuadricula-productos .producto,
+#filtro-carroceria:checked ~ .cuadricula-productos .producto {
+  display: none;
+}
+
+#filtro-motor:checked ~ .cuadricula-productos .tarjeta-producto.cat-motor,
+#filtro-frenos:checked ~ .cuadricula-productos .tarjeta-producto.cat-frenos,
+#filtro-suspension:checked ~ .cuadricula-productos .tarjeta-producto.cat-suspension,
+#filtro-electrico:checked ~ .cuadricula-productos .tarjeta-producto.cat-electrico,
+#filtro-filtros:checked ~ .cuadricula-productos .tarjeta-producto.cat-filtros,
+#filtro-llantas:checked ~ .cuadricula-productos .tarjeta-producto.cat-llantas,
+#filtro-aceites:checked ~ .cuadricula-productos .tarjeta-producto.cat-aceites,
+#filtro-carroceria:checked ~ .cuadricula-productos .tarjeta-producto.cat-carroceria,
+#filtro-motor:checked ~ .cuadricula-productos .producto.cat-motor,
+#filtro-frenos:checked ~ .cuadricula-productos .producto.cat-frenos,
+#filtro-suspension:checked ~ .cuadricula-productos .producto.cat-suspension,
+#filtro-electrico:checked ~ .cuadricula-productos .producto.cat-electrico,
+#filtro-filtros:checked ~ .cuadricula-productos .producto.cat-filtros,
+#filtro-llantas:checked ~ .cuadricula-productos .producto.cat-llantas,
+#filtro-aceites:checked ~ .cuadricula-productos .producto.cat-aceites,
+#filtro-carroceria:checked ~ .cuadricula-productos .producto.cat-carroceria {
+  display: block;
+}
+
+.barra-catalogo input,
+.barra-catalogo select,
+.tarjeta-formulario input,
+.tarjeta-formulario textarea {
+  width: 100%;
+  background: rgba(0,0,0,0.2);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--color-texto);
+  padding: 12px 14px;
+  margin-bottom: 12px;
+}
+
+.barra-catalogo input:focus,
+.barra-catalogo select:focus,
+.tarjeta-formulario input:focus,
+.tarjeta-formulario textarea:focus {
+  outline: none;
+  border-color: rgba(255,183,0,0.7);
+  box-shadow: 0 0 0 3px rgba(255,183,0,0.14);
+}
+
+.tarjeta-formulario form {
+  display: grid;
+  gap: 12px;
+}
+
+.pagina-login {
+  padding: 60px 0;
+  min-height: calc(100vh - 180px);
+  display: flex;
+  align-items: center;
+}
+
+.contenedor-login {
+  margin: auto;
+  width: min(460px, 100%);
+}
+
+.formulario-login {
+  background: linear-gradient(180deg, rgba(35,35,35,0.96), rgba(15,15,15,0.96));
+  border: 2px solid rgba(255,255,255,0.08);
+  padding: 38px 32px;
+  box-shadow: var(--shadow-strong);
+}
+
+.formulario-login h1 {
+  font-size: clamp(2.4rem, 4vw, 3rem);
+}
+
+.enlaces-login {
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.enlaces-login a {
+  color: var(--color-texto-suave);
+}
+
+.enlaces-login a:hover {
+  color: var(--color-acento-2);
+}
+
+.pie-pagina {
+  background: linear-gradient(180deg, rgba(12,12,12,0.96), rgba(7,7,7,0.98));
+  border-top: 3px solid var(--color-acento);
+  padding: 32px 0 18px;
+}
+
+.pie-contenido {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem 0;
+  font-family: monospace;
+  font-size: 0.85rem;
+  color: var(--color-texto-suave);
+}
+
+.nombre-empresa {
+  margin: 0 0 0.6rem;
+  font-weight: 700;
+  color: var(--color-texto);
+}
+
+.pie-contenido p {
+  margin: 0.2rem 0;
+}
+
+.redes-sociales {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-weight: 700;
+}
+
+.redes-sociales a {
+  color: var(--color-acento-2);
+}
+
+.redes-sociales a:hover {
+  color: var(--color-texto);
+}
+
+.cuadricula-pie {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.logo-pie {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.distintivo-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  background: var(--color-acento);
+  color: var(--color-texto);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.pie-pagina h3 {
+  margin: 0 0 12px;
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-acento-2);
+}
+
+.pie-pagina ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.enlaces-sociales {
+  display: flex;
+  gap: 10px;
+}
+
+.enlaces-sociales a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.02);
+  color: var(--color-texto);
+}
+
+.enlaces-sociales a:hover {
+  border-color: rgba(255,183,0,0.7);
+  color: var(--color-acento-2);
+}
+
+.pie-inferior {
+  margin-top: 26px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  text-align: center;
+}
+
+.volver-arriba {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-acento);
+  border: 2px solid rgba(255,255,255,0.12);
+  color: var(--color-texto);
+  box-shadow: 0 10px 18px rgba(0,0,0,0.3);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.volver-arriba.mostrar {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.animate-reveal {
+  opacity: 0;
+
+}
+
+.animate-reveal.visible {
+  opacity: 1;
+
+}
+
+@media (max-width: 900px) {
+  .tres-columnas,
+  .cuatro-columnas,
+  .cuadricula-pie,
+  .distribucion-dividida,
+  .cuadricula-tarjetas {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1000px) {
+  .menu-navegacion {
+    display: flex;
+    gap: 0.8rem;
+    justify-content: flex-end;
+  }
+
+  .seccion-principal {
+    min-height: 560px;
+  }
+
+  .contenido-principal {
+    padding-top: 72px;
+  }
+
+  .acciones-principales {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .boton {
+    width: 100%;
+  }
+
+  .barra-catalogo,
+  .enlaces-login {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 700px) {
+  .navegacion {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 0.75rem 0;
+  }
+
+  .imagen-logo {
+    width: 10rem;
+    height: 3.5rem;
+  }
+
+  .menu-navegacion {
+    justify-content: flex-start;
+    gap: 0.65rem 1rem;
+  }
+
+  .menu-navegacion a {
+    font-size: 0.7rem;
+  }
+}
+

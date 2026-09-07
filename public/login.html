@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Automotor Express | Login</title>
+        <meta name="description" content="Inicia sesión en Automotor Express para gestionar tu vehículo." />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="css/styles-principal.css" />
+        <script src="js/site.js" defer></script>
+    </head>
+    <body>
+        <div class="fondo-parallax" aria-hidden="true"></div>
+
+        <header class="encabezado">
+            <div class="contenedor navegacion">
+                <a href="index.html" class="logotipo" aria-label="Automotor Express inicio">
+                    <img class="imagen-logo" src="img/logo2.png" alt="Automotor Express" />
+                </a>
+
+                <nav class="menu-navegacion" aria-label="Menú principal">
+                    <a href="index.html">Inicio</a>
+                    <a href="servicios.html">Servicios</a>
+                    <a href="catalogo.html">Catálogo</a>
+                    <a href="nosotros.html">Nosotros</a>
+                    <a href="contacto.html">Contacto</a>
+                    <a href="login.html">Login</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="pagina-secundaria">
+            <section class="encabezado-pagina">
+                <div class="contenedor">
+                    <p class="etiqueta-seccion">Acceso</p>
+                    <h1 class="titulo-principal titulo-pagina">Inicia sesión</h1>
+                    <p class="texto-principal texto-pagina">
+                        Accede a tu cuenta para gestionar citas, consultar servicios y revisar tu historial automotriz.
+                    </p>
+                </div>
+            </section>
+
+            <section class="seccion-acceso">
+                <div class="contenedor contenedor-acceso">
+                    <div class="panel-acceso">
+                        <div class="encabezado-seccion">
+                            <p class="etiqueta-seccion">Login</p>
+                            <h2>Iniciar sesión</h2>
+                        </div>
+
+                        <form class="formulario-acceso" action="index.php" method="post">
+                            <div class="campo-formulario">
+                                <label for="usuario-login">Usuario</label>
+                                <input type="text" id="usuario-login" name="usuario" placeholder="Tu usuario" required />
+                            </div>
+
+                            <div class="campo-formulario">
+                                <label for="contrasena-login">Contraseña</label>
+                                <input type="password" id="contrasena-login" name="password" placeholder="********" required />
+                            </div>
+
+                            <button type="submit" class="boton-principal boton-formulario">Ingresar</button>
+                            <p class="enlace-formulario"><a href="login.html">¿No tienes cuenta? Regístrate</a></p>
+                        </form>
+                    </div>
+
+                    <div class="panel-acceso">
+                        <div class="encabezado-seccion">
+                            <p class="etiqueta-seccion">Registro</p>
+                            <h2>Crear cuenta</h2>
+                        </div>
+
+                        <form class="formulario-acceso" action="registrar.php" method="post">
+                            <div class="campo-formulario">
+                                <label for="usuario-registro">Usuario</label>
+                                <input type="text" id="usuario-registro" name="usuario" placeholder="Nuevo usuario" required />
+                            </div>
+
+                            <div class="campo-formulario">
+                                <label for="contrasena-registro">Contraseña</label>
+                                <input type="password" id="contrasena-registro" name="password" placeholder="********" required />
+                            </div>
+
+                            <div class="campo-formulario">
+                                <label for="confirmar-contrasena">Confirmar contraseña</label>
+                                <input type="password" id="confirmar-contrasena" name="confirmar_password" placeholder="********" required />
+                            </div>
+
+                            <button type="submit" class="boton-principal boton-formulario">Registrarse</button>
+                            <p class="enlace-formulario"><a href="login.html">¿Ya tienes cuenta? Inicia sesión</a></p>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="pie-pagina" id="contacto">
+            <div class="contenedor pie-contenido">
+                <div>
+                    <p class="nombre-empresa">Automotor Express © 2026</p>
+                    <p>Teléfono: +57 1 2345678</p>
+                    <p>Email: info@automotorexpress.com</p>
+                    <p>Dirección: Cra 50 #12-30, Bogotá</p>
+                </div>
+
+                <div class="redes-sociales">
+                    <a href="#" aria-label="Facebook">Facebook</a>
+                    <a href="#" aria-label="Instagram">Instagram</a>
+                    <a href="#" aria-label="WhatsApp">WhatsApp</a>
+                    <a href="#" aria-label="Twitter">Twitter</a>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

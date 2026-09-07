@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catálogo de Carros | AutoMotor Express</title>
+    <meta name="description" content="Catálogo de repuestos para carros en AutoMotor Express." />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="pagina-catalogo catalogo-carros">
+    <header class="encabezado">
+      <div class="contenedor navegacion">
+        <a href="index.html" class="logotipo" aria-label="Automotor Express inicio">
+          <img class="imagen-logo" src="img/logo2.png" alt="Automotor Express" />
+        </a>
+        <nav class="menu-navegacion" aria-label="Menú principal">
+          <a href="index.html">Inicio</a>
+          <a href="servicios.html">Servicios</a>
+          <a href="catalogo.html">Catálogo</a>
+          <a href="nosotros.html">Nosotros</a>
+          <a href="contacto.html">Contacto</a>
+          <a href="login.html">Login</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="encabezado-pagina encabezado-pequeno">
+        <div class="contenedor">
+          <p class="sobretitulo">Catálogo de carros</p>
+          <h1>Repuestos y accesorios para tu vehículo</h1>
+        </div>
+      </section>
+
+      <section class="seccion">
+        <div class="contenedor">
+          <div class="barra-catalogo">
+            <input type="text" placeholder="Buscar producto" />
+            <select>
+              <option>Todos</option>
+              <option>Motor</option>
+              <option>Frenos</option>
+              <option>Suspensión</option>
+            </select>
+          </div>
+
+          <div class="filtro-catalogo">
+            <input type="radio" name="filtro-categoria" id="filtro-todos" checked />
+            <input type="radio" name="filtro-categoria" id="filtro-motor" />
+            <input type="radio" name="filtro-categoria" id="filtro-frenos" />
+            <input type="radio" name="filtro-categoria" id="filtro-suspension" />
+            <input type="radio" name="filtro-categoria" id="filtro-electrico" />
+            <input type="radio" name="filtro-categoria" id="filtro-filtros" />
+            <input type="radio" name="filtro-categoria" id="filtro-llantas" />
+            <input type="radio" name="filtro-categoria" id="filtro-aceites" />
+            <input type="radio" name="filtro-categoria" id="filtro-carroceria" />
+
+            <div class="etiquetas-filtro" aria-label="Filtro de categorías">
+              <label for="filtro-todos" class="etiqueta-filtro">Todos</label>
+              <label for="filtro-motor" class="etiqueta-filtro">Motor</label>
+              <label for="filtro-frenos" class="etiqueta-filtro">Frenos</label>
+              <label for="filtro-suspension" class="etiqueta-filtro">Suspensión y dirección</label>
+              <label for="filtro-electrico" class="etiqueta-filtro">Eléctrico y batería</label>
+              <label for="filtro-filtros" class="etiqueta-filtro">Filtros</label>
+              <label for="filtro-llantas" class="etiqueta-filtro">Llantas y rines</label>
+              <label for="filtro-aceites" class="etiqueta-filtro">Aceites y lubricantes</label>
+              <label for="filtro-carroceria" class="etiqueta-filtro">Carrocería y exteriores</label>
+            </div>
+
+            <div class="cuadricula-productos">
+              <article class="tarjeta producto">
+                <img src="img/motor/filtro-aire.jpg" alt="Filtro de aire" />
+                <div class="cuerpo-tarjeta">
+                  <h3>Filtro de aire</h3>
+                  <p class="price">$45.000</p>
+                  <p>Mejora el flujo y la filtración del aire para un motor más limpio.</p>
+                  <a href="#" class="boton boton-secundario">VER MÁS</a>
+                </div>
+              </article>
+              <article class="tarjeta producto">
+                <img src="img/motor/bujias.jpg" alt="Juego de bujías" />
+                <div class="cuerpo-tarjeta">
+                  <h3>Juego de bujías</h3>
+                  <p class="price">$65.000</p>
+                  <p>Encendido eficiente y mayor respuesta al acelerar.</p>
+                  <a href="#" class="boton boton-secundario">VER MÁS</a>
+                </div>
+              </article>
+              <article class="tarjeta producto">
+                <img src="img/motor/correa-distribucion.jpg" alt="Correa de distribución" />
+                <div class="cuerpo-tarjeta">
+                  <h3>Correa de distribución</h3>
+                  <p class="price">$120.000</p>
+                  <p>Sincronización precisa para un funcionamiento estable del motor.</p>
+                  <a href="#" class="boton boton-secundario">VER MÁS</a>
+                </div>
+              </article>
+
+              <article class="tarjeta producto">
+                <img src="img/frenos/pastillas-freno.jpg" alt="Pastillas de freno" />
+                <div class="cuerpo-tarjeta">
+                  <h3>Pastillas de freno</h3>
+                  <p class="price">$80.000</p>
+                  <p>Frenado seguro, uniforme y con excelente resistencia térmica.</p>
+                  <a href="#" class="boton boton-secundario">VER MÁS</a>
+                </div>
+              </article>
+              <article class="tarjeta producto">
+                <img src="img/frenos/discos-freno.jpg" alt="Discos de freno" />
+                <div class="cuerpo-tarjeta">
+                  <h3>Discos de freno</h3>
+                  <p class="price">$140.000</p>
+                  <p>Mayor control y estabilidad en frenadas repetidas.</p>
+                  <a href="#" class="boton boton-secundario">VER MÁS</a>
+                </div>
+              </article>
+              <article class="tarjeta producto">
+                <img src="img/frenos/kit-frenos.jpg" alt="Kit de frenos" />
+                <div class="cuerpo-tarjeta">
+                  <h3>Kit de frenos</h3>
+                  <p class="price">$220.000</p>
+                  <p>Paquete completo para mantenimiento de seguridad y rendimiento.</p>
+                  <a href="#" class="boton boton-secundario">VER MÁS</a>
+                </div>
+              </article>
+
+              <article class="tarjeta producto">
+                <img src="img/suspencion/amortiguador.jpg" alt="Amortiguador" />
+                <div class="cuerpo-tarjeta">
+                  <h3>Amortiguador</h3>
+                  <p class="price">$120.000</p>
+                  <p>Absorbe impactos y mejora la estabilidad en la carretera.</p>
+                  <a href="#" class="boton boton-secundario">VER MÁS</a>
+                </div>
+              </article>
+              <article class="tarjeta producto">
+                <img src="img/suspencion/barra-estabilizadora.jpg" alt="Barra estabilizadora" />
+                <div class="cuerpo-tarjeta">
+                  <h3>Barra estabilizadora</h3>
+                  <p class="price">$152.000</p>
+                  <p>Reduce el balanceo y mejora la tracción en curvas.</p>
+                  <a href="#" class="boton boton-secundario">VER MÁS</a>
+                </div>
+              </article>
+              <article class="tarjeta producto">
+                <img src="img/suspencion/kit-suspension.jpg" alt="Kit de suspensión" />
+                <div class="cuerpo-tarjeta">
+                  <h3>Kit de suspensión</h3>
+                  <p class="price">$310.000</p>
+                  <p>Solución integral para un viaje más cómodo y seguro.</p>
+                  <a href="#" class="boton boton-secundario">VER MÁS</a>
+                </div>
+              </article>
+
+              <article class="tarjeta producto">
+                <img src="img/motor/bateria.jpg" alt="Batería automotriz" />
+                <div class="cuerpo-tarjeta">
+                  <h3>Batería 12V</h3>
+                  <p class="price">$320.000</p>
+                  <p>Arranque confiable con mayor duración en condiciones exigentes.</p>
+                  <a href="#" class="boton boton-secundario">VER MÁS</a>
+                </div>
+              </article>
+              <article class="tarjeta producto">
+                <img src="img/motor/bobina-encendido.jpg" alt="Bobina de encendido" />
+                <div class="cuerpo-tarjeta">
+                  <h3>Bobina de encendido</h3>
+                  <p class="price">$95.000</p>
+                  <p>Mejora la chispa y la eficiencia del sistema eléctrico.</p>
+                  <a href="#" class="boton boton-secundario">VER MÁS</a>
+                </div>
+              </article>
+              <article class="tarjeta producto">
+                <img src="img/motor/alternador.jpg" alt="Alternador" />
+                <div class="cuerpo-tarjeta">
+                  <h3>Alternador</h3>
+                  <p class="price">$410.000</p>
+                  <p>Generación constante de energía para batería y accesorios.</p>
+                  <a href="#" class="boton boton-secundario">VER MÁS</a>
+                </div>
+              </article>
+
+              <article class="tarjeta producto">
+                <img src="img/motor/filtro-aire.jpg" alt="Filtro de aire" />
+                <div class="cuerpo-tarjeta">
+                  <h3>Filtro de aire</h3>
+                  <p class="price">$38.000</p>
+                  <p>Protege el motor y mantiene una combustión más limpia.</p>
+                  <a href="#" class="boton boton-secundario">VER MÁS</a>
+                </div>
+              </article>
+              <article class="tarjeta producto">
+                <img src="img/motor/aceite.jpg" alt="Filtro de aceite" />
+                <div class="cuerpo-tarjeta">
+                  <h3>Filtro de aceite</h3>
+                  <p class="price">$28.000</p>
+                  <p>Reduce desgaste interno y protege el circuito de lubricación.</p>
+                  <a href="#" class="boton boton-secundario">VER MÁS</a>
+                </div>
+              </article>
+              <article class="tarjeta producto">
+                <img src="img/motor/filtro-gasolina.jpg" alt="Filtro de gasolina" />
+                <div class="cuerpo-tarjeta">
+                  <h3>Filtro de gasolina</h3>
+                  <p class="price">$34.000</p>
+                  <p>Evita impurezas y mantiene el suministro del combustible estable.</p>
+                  <a href="#" class="boton boton-secundario">VER MÁS</a>
+                </div>
+              </article>
+
+              <article class="tarjeta producto">
+                <img src="img/motor/llantas185.jpg" alt="Llanta para carro" />
+                <div class="cuerpo-tarjeta">
+                  <h3>Llanta 185/65R14</h3>
+                  <p class="price">$430.000</p>
+                  <p>Tracción segura y estabilidad en carretera y ciudad.</p>
+                  <a href="#" class="boton boton-secundario">VER MÁS</a>
+                </div>
+              </article>
+              <article class="tarjeta producto">
+                <img src="img/motor/rines.jpg" alt="Rin automotriz" />
+                <div class="cuerpo-tarjeta">
+                  <h3>Rin 15 pulgadas</h3>
+                  <p class="price">$520.000</p>
+                  <p>Estilo y resistencia para una apariencia y rendimiento mejorados.</p>
+                  <a href="#" class="boton boton-secundario">VER MÁS</a>
+                </div>
+              </article>
+              <article class="tarjeta producto">
+                <img src="img/motor/llanta-vehiculo.jpg" alt="Kit de llantas" />
+                <div class="cuerpo-tarjeta">
+                  <h3>Kit de llantas</h3>
+                  <p class="price">$620.000</p>
+                  <p>Paquete de rodamiento y seguridad para uso diario y urbano.</p>
+                  <a href="#" class="boton boton-secundario">VER MÁS</a>
+                </div>
+              </article>
+
+              <article class="tarjeta producto">
+                <img src="img/motor/aceite.jpg" alt="Aceite sintético" />
+                <div class="cuerpo-tarjeta">
+                  <h3>Aceite sintético 5W30</h3>
+                  <p class="price">$55.000</p>
+                  <p>Protección superior contra calor y desgaste del motor.</p>
+                  <a href="#" class="boton boton-secundario">VER MÁS</a>
+                </div>
+              </article>
+              <article class="tarjeta producto">
+                <img src="img/motor/aceite-transmision.jpg" alt="Aceite de transmisión" />
+                <div class="cuerpo-tarjeta">
+                  <h3>Aceite de transmisión</h3>
+                  <p class="price">$72.000</p>
+                  <p>Lubricación exacta para mayor suavidad y duración del tren de fuerza.</p>
+                  <a href="#" class="boton boton-secundario">VER MÁS</a>
+                </div>
+              </article>
+              <article class="tarjeta producto">
+                <img src="img/frenos/fluido-freno.jpg" alt="Fluido para freno" />
+                <div class="cuerpo-tarjeta">
+                  <h3>Fluido para freno</h3>
+                  <p class="price">$28.000</p>
+                  <p>Mejora la respuesta hidráulica y la protección del circuito.</p>
+                  <a href="#" class="boton boton-secundario">VER MÁS</a>
+                </div>
+              </article>
+
+              <article class="tarjeta producto">
+                <img src="img/motor/parachoque.jpg" alt="Parachoque delantero" />
+                <div class="cuerpo-tarjeta">
+                  <h3>Parachoque delantero</h3>
+                  <p class="price">$210.000</p>
+                  <p>Protección exterior resistente para golpes y desgaste diario.</p>
+                  <a href="#" class="boton boton-secundario">VER MÁS</a>
+                </div>
+              </article>
+              <article class="tarjeta producto">
+                <img src="img/motor/faro.jpg" alt="Faro LED" />
+                <div class="cuerpo-tarjeta">
+                  <h3>Faro LED</h3>
+                  <p class="price">$180.000</p>
+                  <p>Mayor visibilidad y presentación moderna para tu vehículo.</p>
+                  <a href="#" class="boton boton-secundario">VER MÁS</a>
+                </div>
+              </article>
+              <article class="tarjeta producto">
+                <img src="img/motor/molduras.jpg" alt="Molduras para carrocería" />
+                <div class="cuerpo-tarjeta">
+                  <h3>Molduras exteriores</h3>
+                  <p class="price">$90.000</p>
+                  <p>Acabado diferenciado y protección en puntos de impacto y estilo.</p>
+                  <a href="#" class="boton boton-secundario">VER MÁS</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </seccion>
+    </main>
+
+    <footer class="pie-pagina" id="contacto">
+      <div class="contenedor pie-contenido">
+        <div>
+          <p class="nombre-empresa">Automotor Express © 2026</p>
+          <p>Teléfono: +57 3147606857</p>
+          <p>Email: info@automotorexpress.com</p>
+          <p>Dirección: Cra 50 #12-30, Bogotá</p>
+        </div>
+
+        <div class="redes-sociales">
+          <a href="#" aria-label="Facebook">Facebook</a>
+          <a href="#" aria-label="Instagram">Instagram</a>
+          <a href="#" aria-label="WhatsApp">WhatsApp</a>
+          <a href="#" aria-label="Twitter">Twitter</a>
+        </div>
+      </div>
+    </footer>
+
+    <a href="#top" class="volver-arriba" aria-label="Volver arriba"><i class="fa-solid fa-arrow-up"></i></a>
+    <script src="js/main.js"></script>
+  </body>
+</html>
+

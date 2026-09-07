@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Automotor Express | Contacto</title>
+        <meta name="description" content="Contacto y acceso para clientes de Automotor Express." />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="css/styles-principal.css" />
+        <script src="js/site.js" defer></script>
+    </head>
+    <body>
+        <div class="fondo-parallax" aria-hidden="true"></div>
+
+        <!-- Encabezado principal del sitio -->
+        <header class="encabezado">
+            <div class="contenedor navegacion">
+                <a href="index.html" class="logotipo" aria-label="Automotor Express inicio">
+                    <img class="imagen-logo" src="img/logo2.png" alt="Automotor Express" />
+                </a>
+
+                <nav class="menu-navegacion" aria-label="Menú principal">
+                    <a href="index.html">Inicio</a>
+                    <a href="servicios.html">Servicios</a>
+                    <a href="catalogo.html">Catálogo</a>
+                    <a href="nosotros.html">Nosotros</a>
+                    <a href="contacto.html">Contacto</a>
+                    <a href="login.html">Login</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="pagina-secundaria">
+            <!-- Encabezado de la página de contacto -->
+            <section class="encabezado-pagina">
+                <div class="contenedor">
+                    <p class="etiqueta-seccion">Contacto</p>
+                    <h1 class="titulo-principal titulo-pagina">Estamos atentos a tu vehículo</h1>
+                    <p class="texto-principal texto-pagina">
+                        Comunícate con nosotros para agendar citas, solicitar información o resolver dudas sobre tus servicios.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Información de contacto y mapa -->
+            <section class="seccion-contacto-principal">
+                <div class="contenedor formulario-contacto-contenedor">
+                    <div class="bloque-informacion-contacto">
+                        <div class="encabezado-seccion">
+                            <p class="etiqueta-seccion">Información</p>
+                            <h2>Contacto directo</h2>
+                        </div>
+
+                        <ul class="lista-contacto">
+                            <li><strong>Teléfono:</strong> +57 3147606857</li>
+                            <li><strong>Email:</strong> info@automotorexpress.com</li>
+                            <li><strong>Dirección:</strong> Col. Rufino José Cuervo Sur, Armenia, Quindío</li>
+                            <li><strong>WhatsApp:</strong> +57 3147606857</li>
+                        </ul>
+
+                        <div class="mapa-contacto">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1004.705675365159!2d-75.69580283043351!3d4.523276899715704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e38f594b93f237b%3A0xd5a4e22cb493b862!2sCol.%20Rufino%20Jos%C3%A9%20Cuervo%20Sur!5e1!3m2!1ses!2sco!4v1788645784926!5m2!1ses!2sco" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Mapa de Armenia"></iframe>
+                        </div>
+                    </div>
+
+                    <div class="bloque-formulario-contacto">
+                        <div class="encabezado-seccion">
+                            <p class="etiqueta-seccion">Mensaje</p>
+                            <h2>Envíanos tu consulta</h2>
+                        </div>
+
+                        <form class="formulario-contacto" action="../php/contacto_procesar.php" method="post">
+                            <div class="campo-formulario">
+                                <label for="nombre-contacto">Nombre</label>
+                                <input type="text" id="nombre-contacto" name="nombre" placeholder="Tu nombre" required />
+                            </div>
+
+                            <div class="campo-formulario">
+                                <label for="email-contacto">Email</label>
+                                <input type="email" id="email-contacto" name="email" placeholder="tuemail@ejemplo.com" required />
+                            </div>
+
+                            <div class="campo-formulario">
+                                <label for="telefono-contacto">Teléfono</label>
+                                <input type="tel" id="telefono-contacto" name="telefono" placeholder="300 123 4567" />
+                            </div>
+
+                            <div class="campo-formulario">
+                                <label for="asunto-contacto">Asunto</label>
+                                <select id="asunto-contacto" name="asunto" required>
+                                    <option value="">Selecciona un asunto</option>
+                                    <option value="consulta">Consulta general</option>
+                                    <option value="cita">Agendar cita</option>
+                                    <option value="repuesto">Solicitar repuesto</option>
+                                    <option value="soporte">Soporte técnico</option>
+                                </select>
+                            </div>
+
+                            <div class="campo-formulario">
+                                <label for="mensaje-contacto">Mensaje</label>
+                                <textarea id="mensaje-contacto" name="mensaje" rows="5" placeholder="Escribe tu mensaje..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="boton-principal boton-formulario">Enviar</button>
+                        </form>
+                        <div id="mensaje-respuesta" style="margin-top: 20px; padding: 15px; border-radius: 8px; display: none; text-align: center; font-weight: bold;"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Horarios de atención -->
+            <section class="horarios">
+                <div class="contenedor">
+                    <div class="encabezado-seccion">
+                        <p class="etiqueta-seccion">Horarios</p>
+                        <h2>Atención al cliente</h2>
+                    </div>
+
+                    <div class="tabla-horarios">
+                        <div class="fila-horario"><span>Lunes a viernes</span><strong>8:00 AM - 6:00 PM</strong></div>
+                        <div class="fila-horario"><span>Sábado</span><strong>9:00 AM - 2:00 PM</strong></div>
+                        <div class="fila-horario"><span>Domingo</span><strong>Cerrado</strong></div>
+                        <div class="fila-horario"><span>Festivos</span><strong>Cerrado</strong></div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="pie-pagina" id="contacto">
+            <div class="contenedor pie-contenido">
+                <div>
+                    <p class="nombre-empresa">Automotor Express © 2026</p>
+                    <p>Teléfono: +57 1 2345678</p>
+                    <p>Email: info@automotorexpress.com</p>
+                    <p>Dirección: Cra 50 #12-30, Bogotá</p>
+                </div>
+
+                <div class="redes-sociales">
+                    <a href="#" aria-label="Facebook">Facebook</a>
+                    <a href="#" aria-label="Instagram">Instagram</a>
+                    <a href="#" aria-label="WhatsApp">WhatsApp</a>
+                    <a href="#" aria-label="Twitter">Twitter</a>
+                </div>
+            </div>
+        </footer>
+
+    </body>
+</html>

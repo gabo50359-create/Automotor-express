@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catálogo de Motos | AutoMotor Express</title>
+    <meta name="description" content="Catálogo de repuestos para motos en AutoMotor Express." />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="pagina-catalogo catalogo-motos">
+    <header class="encabezado">
+      <div class="contenedor navegacion">
+        <a href="index.html" class="logotipo" aria-label="Automotor Express inicio">
+          <img class="imagen-logo" src="img/logo2.png" alt="Automotor Express" />
+        </a>
+        <nav class="menu-navegacion" aria-label="Menú principal">
+          <a href="index.html">Inicio</a>
+          <a href="servicios.html">Servicios</a>
+          <a href="catalogo.html">Catálogo</a>
+          <a href="nosotros.html">Nosotros</a>
+          <a href="contacto.html">Contacto</a>
+          <a href="login.html">Login</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="encabezado-pagina encabezado-pequeno">
+        <div class="contenedor">
+          <p class="sobretitulo">Catálogo de motos</p>
+          <h1>Repuestos y accesorios para tu moto</h1>
+        </div>
+      </section>
+
+      <section class="seccion">
+        <div class="contenedor">
+          <div class="barra-catalogo">
+            <input type="text" placeholder="Buscar producto" />
+            <select>
+              <option>Todos</option>
+              <option>Motor</option>
+              <option>Frenos</option>
+              <option>Suspensión</option>
+            </select>
+          </div>
+
+          <div class="filtro-catalogo">
+            <input type="radio" name="filtro-categoria" id="filtro-todos" checked />
+            <input type="radio" name="filtro-categoria" id="filtro-motor" />
+            <input type="radio" name="filtro-categoria" id="filtro-frenos" />
+            <input type="radio" name="filtro-categoria" id="filtro-suspension" />
+            <input type="radio" name="filtro-categoria" id="filtro-electrico" />
+            <input type="radio" name="filtro-categoria" id="filtro-llantas" />
+            <input type="radio" name="filtro-categoria" id="filtro-aceites" />
+            <input type="radio" name="filtro-categoria" id="filtro-carroceria" />
+
+            <div class="etiquetas-filtro" aria-label="Filtro de categorías">
+              <label for="filtro-todos" class="etiqueta-filtro">Todos</label>
+              <label for="filtro-motor" class="etiqueta-filtro">Motor</label>
+              <label for="filtro-frenos" class="etiqueta-filtro">Frenos</label>
+              <label for="filtro-suspension" class="etiqueta-filtro">Suspensión</label>
+              <label for="filtro-electrico" class="etiqueta-filtro">Eléctrico</label>
+              <label for="filtro-llantas" class="etiqueta-filtro">Llantas y rines</label>
+              <label for="filtro-aceites" class="etiqueta-filtro">Aceites y lubricantes</label>
+              <label for="filtro-carroceria" class="etiqueta-filtro">Carrocería y plásticos</label>
+            </div>
+
+            <div class="cuadricula-productos">
+              <article class="tarjeta producto cat-motor">
+                <img src="img/motor/piston.jpg" alt="Pistón" />
+                <div class="cuerpo-tarjeta">
+                  <h3>Pistón</h3>
+                  <p class="price">$88.000</p>
+                  <p>Componente clave para un funcionamiento suave y potente del motor.</p>
+                  <a href="#" class="boton boton-secundario">VER MÁS</a>
+                </div>
+              </article>
+              <article class="tarjeta producto cat-motor">
+                <img src="img/motor/cadena-moto.jpg" alt="Cadena de moto" />
+                <div class="cuerpo-tarjeta">
+                  <h3>Cadena</h3>
+                  <p class="price">$120.000</p>
+                  <p>Transmisión confiable y durabilidad para uso urbano y de ruta.</p>
+                  <a href="#" class="boton boton-secundario">VER MÁS</a>
+                </div>
+              </article>
+              <article class="tarjeta producto cat-motor">
+                <img src="img/motor/bujias.jpg" alt="Bujías para moto" />
+                <div class="cuerpo-tarjeta">
+                  <h3>Bujías</h3>
+                  <p class="price">$42.000</p>
+                  <p>Arranque más estable y combustión eficiente en todo momento.</p>
+                  <a href="#" class="boton boton-secundario">VER MÁS</a>
+                </div>
+              </article>
+
+              <article class="tarjeta producto cat-frenos">
+                <img src="img/frenos/pastillas-freno.jpg" alt="Pastillas de freno para moto" />
+                <div class="cuerpo-tarjeta">
+                  <h3>Pastillas de freno</h3>
+                  <p class="price">$52.000</p>
+                  <p>Detención segura y respuesta rápida en cada frenada.</p>
+                  <a href="#" class="boton boton-secundario">VER MÁS</a>
+                </div>
+              </article>
+              <article class="tarjeta producto cat-frenos">
+                <img src="img/frenos/discos-freno.jpg" alt="Discos de freno para moto" />
+                <div class="cuerpo-tarjeta">
+                  <h3>Discos de freno</h3>
+                  <p class="price">$72.000</p>
+                  <p>Mayor control térmico y mejor desempeño en recorridos prolongados.</p>
+                  <a href="#" class="boton boton-secundario">VER MÁS</a>
+                </div>
+              </article>
+              <article class="tarjeta producto cat-frenos">
+                <img src="img/frenos/kit-frenos.jpg" alt="Kit de frenos para moto" />
+                <div class="cuerpo-tarjeta">
+                  <h3>Kit de frenos</h3>
+                  <p class="price">$160.000</p>
+                  <p>Paquete completo para mantener la seguridad de tus ruedas.</p>
+                  <a href="#" class="boton boton-secundario">VER MÁS</a>
+                </div>
+              </article>
+
+              <article class="tarjeta producto cat-suspension">
+                <img src="img/suspencion/amortiguador.jpg" alt="Amortiguador de moto" />
+                <div class="cuerpo-tarjeta">
+                  <h3>Amortiguador</h3>
+                  <p class="price">$105.000</p>
+                  <p>Comodidad y estabilidad para tramos irregulares y curvas.</p>
+                  <a href="#" class="boton boton-secundario">VER MÁS</a>
+                </div>
+              </article>
+              <article class="tarjeta producto cat-suspension">
+                <img src="img/suspencion/resorte-helicoidal.jpg" alt="Resorte de suspensión" />
+                <div class="cuerpo-tarjeta">
+                  <h3>Resorte de suspensión</h3>
+                  <p class="price">$70.000</p>
+                  <p>Soporte firme para un manejo más estable y controlado.</p>
+                  <a href="#" class="boton boton-secundario">VER MÁS</a>
+                </div>
+              </article>
+              <article class="tarjeta producto cat-suspension">
+                <img src="img/suspencion/kit-suspension.jpg" alt="Kit de suspensión" />
+                <div class="cuerpo-tarjeta">
+                  <h3>Kit de suspensión</h3>
+                  <p class="price">$210.000</p>
+                  <p>Solución completa para una experiencia más cómoda y segura.</p>
+                  <a href="#" class="boton boton-secundario">VER MÁS</a>
+                </div>
+              </article>
+
+              <article class="tarjeta producto cat-electrico">
+                <img src="img/motor/bateria.jpg" alt="Batería de moto" />
+                <div class="cuerpo-tarjeta">
+                  <h3>Batería</h3>
+                  <p class="price">$180.000</p>
+                  <p>Arranque confiable con mejor resistencia ante uso intensivo.</p>
+                  <a href="#" class="boton boton-secundario">VER MÁS</a>
+                </div>
+              </article>
+              <article class="tarjeta producto cat-electrico">
+                <img src="img/motor/alternador.jpg" alt="Sistema eléctrico de moto" />
+                <div class="cuerpo-tarjeta">
+                  <h3>Regulador eléctrico</h3>
+                  <p class="price">$95.000</p>
+                  <p>Estabilidad de carga y mejor rendimiento del sistema eléctrico.</p>
+                  <a href="#" class="boton boton-secundario">VER MÁS</a>
+                </div>
+              </article>
+              <article class="tarjeta producto cat-electrico">
+                <img src="img/motor/faro.jpg" alt="Luz para moto" />
+                <div class="cuerpo-tarjeta">
+                  <h3>Faros LED</h3>
+                  <p class="price">$125.000</p>
+                  <p>Mayor visibilidad y estilo para recorridos nocturnos.</p>
+                  <a href="#" class="boton boton-secundario">VER MÁS</a>
+                </div>
+              </article>
+
+              <article class="tarjeta producto cat-llantas">
+                <img src="img/motor/llantas3.jpg" alt="Llanta para moto" />
+                <div class="cuerpo-tarjeta">
+                  <h3>Llanta 110/70R17</h3>
+                  <p class="price">$260.000</p>
+                  <p>Tracción, estabilidad y agarre en ciudad y carretera.</p>
+                  <a href="#" class="boton boton-secundario">VER MÁS</a>
+                </div>
+              </article>
+              <article class="tarjeta producto cat-llantas">
+                <img src="img/motor/rines.jpg" alt="Rin para moto" />
+                <div class="cuerpo-tarjeta">
+                  <h3>Rin deportivo</h3>
+                  <p class="price">$320.000</p>
+                  <p>Acabado resistente y apariencia moderna para tu moto.</p>
+                  <a href="#" class="boton boton-secundario">VER MÁS</a>
+                </div>
+              </article>
+              <article class="tarjeta producto cat-llantas">
+                <img src="img/motor/llanta-vehiculo.jpg" alt="Kit de llantas" />
+                <div class="cuerpo-tarjeta">
+                  <h3>Kit de llantas</h3>
+                  <p class="price">$350.000</p>
+                  <p>Combo ideal para renovación y mejora de tracción.</p>
+                  <a href="#" class="boton boton-secundario">VER MÁS</a>
+                </div>
+              </article>
+
+              <article class="tarjeta producto cat-aceites">
+                <img src="img/motor/aceite.jpg" alt="Aceite para moto" />
+                <div class="cuerpo-tarjeta">
+                  <h3>Aceite 10W40</h3>
+                  <p class="price">$45.000</p>
+                  <p>Protección premium para motor con menos desgaste y más flujo.</p>
+                  <a href="#" class="boton boton-secundario">VER MÁS</a>
+                </div>
+              </article>
+              <article class="tarjeta producto cat-aceites">
+                <img src="img/motor/aceite-transmision.jpg" alt="Aceite de transmisión de moto" />
+                <div class="cuerpo-tarjeta">
+                  <h3>Aceite de caja</h3>
+                  <p class="price">$58.000</p>
+                  <p>Lubricante exacto para reducción de fricción y mayor vida útil.</p>
+                  <a href="#" class="boton boton-secundario">VER MÁS</a>
+                </div>
+              </article>
+              <article class="tarjeta producto cat-aceites">
+                <img src="img/frenos/fluido-freno.jpg" alt="Fluido para frenos de moto" />
+                <div class="cuerpo-tarjeta">
+                  <h3>Fluido de frenos</h3>
+                  <p class="price">$24.000</p>
+                  <p>Mayor estabilidad hidráulica y sensación más precisa al frenar.</p>
+                  <a href="#" class="boton boton-secundario">VER MÁS</a>
+                </div>
+              </article>
+
+              <article class="tarjeta producto cat-carroceria">
+                <img src="img/motor/parachoque.jpg" alt="Parachoques para moto" />
+                <div class="cuerpo-tarjeta">
+                  <h3>Parachoques</h3>
+                  <p class="price">$95.000</p>
+                  <p>Protección para golpes laterales y desgaste del exterior.</p>
+                  <a href="#" class="boton boton-secundario">VER MÁS</a>
+                </div>
+              </article>
+              <article class="tarjeta producto cat-carroceria">
+                <img src="img/motor/molduras.jpg" alt="Plásticos para moto" />
+                <div class="cuerpo-tarjeta">
+                  <h3>Plásticos</h3>
+                  <p class="price">$75.000</p>
+                  <p>Repuestos resistentes para estética y protección del cuadro.</p>
+                  <a href="#" class="boton boton-secundario">VER MÁS</a>
+                </div>
+              </article>
+              <article class="tarjeta producto cat-carroceria">
+                <img src="img/motor/faro.jpg" alt="Molduras de moto" />
+                <div class="cuerpo-tarjeta">
+                  <h3>Protector de faro</h3>
+                  <p class="price">$52.000</p>
+                  <p>Mayor durabilidad y estética para la parte frontal.</p>
+                  <a href="#" class="boton boton-secundario">VER MÁS</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </seccion>
+    </main>
+
+    <footer class="pie-pagina" id="contacto">
+      <div class="contenedor pie-contenido">
+        <div>
+          <p class="nombre-empresa">Automotor Express © 2026</p>
+          <p>Teléfono: +57 3147606857</p>
+          <p>Email: info@automotorexpress.com</p>
+          <p>Dirección: Cra 50 #12-30, Bogotá</p>
+        </div>
+
+        <div class="redes-sociales">
+          <a href="#" aria-label="Facebook">Facebook</a>
+          <a href="#" aria-label="Instagram">Instagram</a>
+          <a href="#" aria-label="WhatsApp">WhatsApp</a>
+          <a href="#" aria-label="Twitter">Twitter</a>
+        </div>
+      </div>
+    </footer>
+
+    <a href="#top" class="volver-arriba" aria-label="Volver arriba"><i class="fa-solid fa-arrow-up"></i></a>
+    <script src="js/main.js"></script>
+  </body>
+</html>
+

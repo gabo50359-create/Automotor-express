@@ -1,0 +1,42 @@
+.pie-pagina {
+    background: #0a0a0a;
+    border-top: 1px solid var(--color-borde);
+    padding: 2rem 0;
+}
+
+.pie-contenido {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.pie-columna {
+    flex: 1;
+    min-width: 220px;
+}
+
+.pie-columna p,
+.pie-columna a {
+    color: var(--color-texto);
+    font-size: 0.9rem;
+}
+
+.redes-sociales {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.redes-sociales a {
+    color: var(--color-acento);
+}
+
+.copyright {
+    border-top: 1px solid var(--color-borde);
+    padding-top: 1rem;
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+    color: var(--color-texto);
+}

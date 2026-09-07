@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">Logo AutoMotor Express</title>
+  <desc id="logoDesc">Símbolo de marca con las letras AM y una silueta de automóvil.</desc>
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e53935" />
+      <stop offset="100%" stop-color="#ff7043" />
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="54" fill="url(#logoGradient)" />
+  <path d="M22 70 C28 56, 36 48, 60 48 C84 48, 92 56, 98 70 L104 75 L100 80 H20 L16 75 Z" fill="#fff" opacity="0.9" />
+  <circle cx="34" cy="80" r="6" fill="#fff" />
+  <circle cx="86" cy="80" r="6" fill="#fff" />
+  <text x="50%" y="44" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="700" fill="#121212">AM</text>
+</svg>
